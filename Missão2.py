@@ -1,36 +1,12 @@
-import pytest
+#Teste para validar se o número é par
 
-# Funções que serão testadas
-def soma(a, b):
-  return a + b
-
-def subtracao(a, b):
-  return a - b
-
-def multiplicacao(a, b):
-  return a * b
-
-def divisao(a, b):
-  if b == 0:
-    raise ValueError("Não pode dividir por zero!")
-  return a / b
+def is_even(number):
+    return number % 2 == 0
 
 
-# Testes
-def test_soma():
-  assert soma(3, 2) == 5
-  assert soma(-1, 1) == 0
-
-def test_subtracao():
-  assert subtracao(5, 3) == 2
-  assert subtracao(10, 10) == 0
-
-def test_multiplicacao():
-  assert multiplicacao(3, 3) == 9
-  assert multiplicacao(4, -2) == -8
-
-def test_divisao():
-  assert divisao(10, 2) == 5
-  with pytest.raises(ValueError):
-    divisao(10, 0)
-
+def test_is_even():
+    assert is_even(2) == True
+    assert is_even(3) == False
+    assert is_even(0) == True 
+    assert is_even(-2) == True  
+    assert is_even(-3) == False 
